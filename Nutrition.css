@@ -1,0 +1,216 @@
+/* Center the page content while keeping the header at the top */
+body {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    background-color: #f8f9fa; /* Light background color */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    flex: 1; /* Allow the wrapper to grow and fill the available space */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    padding: 20px;
+    background-color: #fff; /* White background for the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-sizing: border-box; /* Include padding in width/height */
+    max-width: 90%; /* Use 90% of the viewport width */
+    width: 1200px; /* Set a fixed width for larger screens */
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 20px; /* Add spacing between the header and the white box */
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text inside the content */
+}
+
+/* Ensure the header stays at the top */
+header {
+    width: 100%; /* Make the header span the full width */
+    background-color: #059212; /* Dark green */
+    color: white; /* White text */
+    padding: 15px 20px; /* Add padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center the header text */
+    position: sticky; /* Keep the header at the top when scrolling */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+/* Nutrition Page Styles */
+.nutrition-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px; /* Limit the form width */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.meal-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light background for sections */
+}
+
+.meal-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #059212; /* Dark green */
+}
+
+.meal-list {
+    list-style: none;
+    padding: 0;
+}
+
+.meal-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.meal-list li:last-child {
+    border-bottom: none;
+}
+
+/* Add Item Form */
+.add-item-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for forms */
+}
+
+.add-item-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #06D001; /* Bright green */
+    color: #fff;
+}
+
+.add-item-button:hover {
+    background-color: #059212; /* Dark green */
+}
+
+/* Submit Button */
+.submit-item-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #059212; /* Dark green */
+    color: white;
+}
+
+.submit-item-button:hover {
+    background-color: #04610F; /* Darker green */
+}
+
+/* Delete Button */
+.delete-item-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #dc3545; /* Red */
+    color: #fff;
+}
+
+.delete-item-button:hover {
+    background-color: #c82333; /* Darker red */
+}
+
+/* Autocomplete List */
+.autocomplete-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ddd;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: #fff;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for dropdowns */
+}
+
+.autocomplete-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.autocomplete-list li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Shared Button Styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-success {
+    background-color: #28a745; /* Green */
+    color: #fff;
+}
+
+.button-success:hover {
+    background-color: #218838; /* Darker green */
+}
+
+.button-primary {
+    background-color: #06D001; /* Bright green */
+    color: #fff;
+}
+
+.button-primary:hover {
+    background-color: #059212; /* Darker green */
+}
+
+.button-danger {
+    background-color: #dc3545; /* Red */
+    color: #fff;
+}
+
+.button-danger:hover {
+    background-color: #c82333; /* Darker red */
+}

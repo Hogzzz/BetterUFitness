@@ -1,0 +1,810 @@
+/* Global Styles */
+html, body {
+    height: 100%; /* Ensure the body takes up the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white; /* White background */
+    color: black; /* Black text for readability */
+}
+
+/* Wrapper for the entire page content */
+.wrapper {
+    flex: 1; /* Allow the wrapper to grow and fill the available space */
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the wrapper horizontally */
+    padding: 20px;
+    background-color: white; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-sizing: border-box; /* Include padding in width/height */
+    margin-top: 20px; /* Add spacing between the header and the white box */
+}
+
+/* Main content area */
+.main-content {
+    flex: 1; /* Pushes the footer to the bottom if content is short */
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Add spacing below the main content */
+    padding-top: 20px; /* Add padding to the top */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #059212; /* Dark green */
+    color: white; /* White text */
+    padding: 15px 20px;
+    margin-bottom: 20px; /* Add spacing below the header */
+}
+
+header.dashboard-header {
+    background-color: #059212; /* Dark green */
+    color: #FFFFFF; /* White text */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+header.dashboard-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: white; /* White text */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+/* Navigation */
+nav {
+    flex-grow: 1; /* Allows nav to take available space */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px; /* Adds more spacing between items */
+}
+
+nav ul li a {
+    color: white; /* White text for links */
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    color: #9BEC00; /* Light green on hover */
+}
+
+a {
+    color: black; /* Black links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #9BEC00; /* Light green on hover */
+}
+
+/* User Profile */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between buttons */
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-profile a {
+    color: white; /* White text */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #06D001; /* Bright green */
+    transition: background-color 0.3s ease;
+}
+
+.user-profile a:hover {
+    background-color: #059212; /* Dark green on hover */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #34495e;
+    color: white;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background: #e67e22;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.dashboard-header {
+    background-color: #059212; /* Dark green */
+    color: white; /* White text */
+    padding: 20px 0; /* Adjust padding as needed */
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure it spans the full width */
+    margin: 0; /* Remove any default margins */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.dashboard-header .logo img {
+    height: 50px;
+    margin-left: 20px; /* Add spacing for the logo if needed */
+}
+
+.dashboard-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.dashboard-header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dashboard-header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-header .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px; /* Add spacing for the user profile if needed */
+}
+
+.dashboard-header .user-profile img {
+    height: 40px;
+    border-radius: 50%;
+}
+
+.dashboard-header .logout-button {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dashboard-header .logout-button:hover {
+    text-decoration: underline;
+}
+
+/* User Profile Text in Header */
+header.dashboard-header .user-profile span {
+    color: #059212; /* Dark green for user greeting text */
+    font-weight: normal; /* Ensure consistent font weight */
+    font-size: 1rem; /* Adjust font size if needed */
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 20px; /* Add padding to the top */
+}
+
+.contact-container h1, .contact-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.contact-container p {
+    text-align: center;
+    color: #555;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input, .contact-form select, .contact-form textarea, .contact-form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    background-color: #059212; /* Dark green submit button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #04610F; /* Darker green on hover */
+}
+
+.submit-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding-top: 20px; /* Add padding to the top */
+}
+
+.submit-container h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.submit-container p {
+    color: #555;
+    margin: 10px 0;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #059212; /* Dark green */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #04610F; /* Darker green on hover */
+}
+
+/* Buttons */
+button, .save-button, .add-item-button, .submit-item-button {
+    background-color: #06D001; /* Bright green buttons */
+    color: white; /* White text */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover, .save-button:hover, .add-item-button:hover, .submit-item-button:hover {
+    background-color: #059212; /* Dark green on hover */
+}
+
+/* Forms */
+form {
+    background-color: #FFFFFF; /* White form background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid black; /* Black border */
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: white; /* White background */
+    color: black; /* Black text */
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #06D001; /* Bright green focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(6, 208, 1, 0.5); /* Green glow */
+}
+
+/* Add shadow to modals, dropdowns, and forms */
+.modal, .dropdown, form {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for overlapping elements */
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #FFFFFF; /* White list items */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul li button {
+    background-color: #FF4D4D; /* Red delete button */
+    color: #FFFFFF;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+ul li button:hover {
+    background-color: #CC0000; /* Darker red on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #059212; /* Dark green */
+    color: white; /* White text */
+    text-align: center;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow at the top */
+    width: 100%; /* Ensure the footer spans the full width */
+    position: relative; /* Ensure proper positioning */
+    box-sizing: border-box;
+    margin-top: 20px; /* Add spacing above the footer */
+}
+
+/* Sign-In Specific Styles */
+.signin-container {
+    background-color: #FFFFFF; /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    padding-top: 20px; /* Add padding to the top */
+}
+
+.signin-container h2 {
+    color: #0056B3; /* Deeper blue for headings */
+    margin-bottom: 10px;
+}
+
+.signin-container p {
+    color: #333; /* Dark grey text */
+    margin-bottom: 20px;
+}
+
+.signin-container form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.signin-container form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.signin-container form button {
+    background-color: #32CD32; /* Lime green button */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signin-container form button:hover {
+    background-color: #28A428; /* Darker lime green on hover */
+}
+
+.signin-container .signup-link a {
+    color: #0056B3; /* Deeper blue for links */
+    text-decoration: underline;
+}
+
+.signin-container .signup-link a:hover {
+    color: #32CD32; /* Lime green on hover */
+}
+
+/* Navigation Links */
+header.dashboard-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between links */
+}
+
+header.dashboard-header nav ul li {
+    display: inline;
+}
+
+header.dashboard-header nav ul li a {
+    color: #059212; /* Dark green text for links */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header.dashboard-header nav ul li a:hover {
+    background-color: #FFFFFF; /* White background on hover */
+    color: #059212; /* Dark green text on hover */
+}
+
+/* Nutrition Page Specific Styles */
+.nutrition-form {
+    margin: 20px 0;
+}
+
+.meal-section {
+    margin-bottom: 30px;
+}
+
+.meal-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.meal-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.add-item-form {
+    margin-top: 10px;
+}
+
+.add-item-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-item-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-item-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.delete-item-button:hover {
+    background-color: #a71d2a;
+}
+
+/* Shared styles for headers */
+.dashboard-header h1 {
+    font-size: 2rem;
+    color: #007bff; /* Match the Workout page header color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Shared styles for sections */
+.section-container {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+/* Shared button styles */
+.button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+.button-primary {
+    background-color: #06D001; /* Bright green */
+}
+
+.button-primary:hover {
+    background-color: #059212; /* Dark green */
+}
+
+.button-danger {
+    background-color: #dc3545;
+}
+
+.button-danger:hover {
+    background-color: #c82333;
+}
+
+.button-success {
+    background-color: #28a745;
+}
+
+.button-success:hover {
+    background-color: #218838;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: black; /* Black background */
+    color: white; /* White text */
+}
+
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode .wrapper,
+body.dark-mode .main-content,
+body.dark-mode .contact-container,
+body.dark-mode .submit-container,
+body.dark-mode .nutrition-form,
+body.dark-mode .meal-section,
+body.dark-mode .dashboard,
+body.dark-mode .fitsync-ai,
+body.dark-mode .calendar-container {
+    background-color: #222; /* Darker background */
+    color: white; /* White text */
+    border: 1px solid #555; /* Subtle border */
+}
+
+body.dark-mode nav ul li a {
+    color: white; /* White links */
+}
+
+body.dark-mode nav ul li a:hover {
+    color: #9BEC00; /* Light green on hover */
+}
+
+body.dark-mode button,
+body.dark-mode .save-button,
+body.dark-mode .add-item-button,
+body.dark-mode .submit-item-button {
+    background-color: #444; /* Darker button background */
+    color: white; /* White text */
+}
+
+body.dark-mode button:hover,
+body.dark-mode .save-button:hover,
+body.dark-mode .add-item-button:hover,
+body.dark-mode .submit-item-button:hover {
+    background-color: #555; /* Slightly lighter on hover */
+}
+
+body.dark-mode .profile-info, 
+body.dark-mode .display-info, 
+body.dark-mode form, 
+body.dark-mode .contact-container, 
+body.dark-mode .submit-container, 
+body.dark-mode .nutrition-form, 
+body.dark-mode .meal-section {
+    background-color: #333; /* Darker background for forms and sections */
+    color: white; /* White text */
+    border: 1px solid #555; /* Subtle border */
+}
+
+body.dark-mode ul li {
+    background-color: #444; /* Darker list item background */
+    color: white; /* White text */
+}
+
+body.dark-mode ul li button {
+    background-color: #555; /* Darker button background */
+}
+
+body.dark-mode ul li button:hover {
+    background-color: #666; /* Slightly lighter on hover */
+}
+
+body.dark-mode .dashboard {
+    background-color: #222; /* Darker background for dashboard */
+    color: white; /* White text */
+}
+
+body.dark-mode .calories, 
+body.dark-mode .macros, 
+body.dark-mode .activity, 
+body.dark-mode .health-stats {
+    background-color: #333; /* Darker background for sections */
+    color: white; /* White text */
+    border: 1px solid #555; /* Subtle border */
+}
+
+body.dark-mode .calorie-box svg circle {
+    stroke: #E0E0E0; /* Light grey for the empty ring */
+}
+
+body.dark-mode .calorie-box svg circle.calories-burned {
+    stroke: #FF4D4D; /* Red for burned calories in dark mode */
+}
+
+body.dark-mode .calorie-box svg circle.calories-consumed {
+    stroke: #059212; /* Dark green for consumed calories in dark mode */
+}
+
+body.dark-mode .calorie-text p {
+    color: white; /* White text for calorie details */
+}
+
+body.dark-mode .nutrition-form, 
+body.dark-mode .meal-section {
+    background-color: #333; /* Darker background for forms and sections */
+    color: white; /* White text */
+    border: 1px solid #555; /* Subtle border */
+}
+
+body.dark-mode .meal-list li {
+    background-color: #444; /* Darker list item background */
+    color: white; /* White text */
+}
+
+body.dark-mode .meal-list li button {
+    background-color: #555; /* Darker button background */
+}
+
+body.dark-mode .meal-list li button:hover {
+    background-color: #666; /* Slightly lighter on hover */
+}
+
+body.dark-mode .fitsync-ai {
+    background-color: #222; /* Darker background for AI page */
+    color: white; /* White text */
+}
+
+body.dark-mode .ai-options, 
+body.dark-mode #workout-ai-section, 
+body.dark-mode #nutrition-ai-section, 
+body.dark-mode #chatbot-section {
+    background-color: #333; /* Darker background for sections */
+    color: white; /* White text */
+    border: 1px solid #555; /* Subtle border */
+}
+
+body.dark-mode #chat-container {
+    background-color: #444; /* Darker background for chat container */
+    color: white; /* White text */
+    border: 1px solid #555; /* Subtle border */
+}
+
+body.dark-mode #chat-input {
+    background-color: #333; /* Darker input background */
+    color: white; /* White text */
+    border: 1px solid #555; /* Subtle border */
+}
+
+body.dark-mode .calendar-container {
+    background-color: #222; /* Darker background for calendar container */
+    color: white; /* White text */
+}
+
+body.dark-mode .calendar-cell {
+    background-color: #333; /* Darker background for calendar cells */
+    color: white; /* White text */
+    border: 1px solid #555; /* Subtle border */
+}
+
+body.dark-mode .calendar-cell.today {
+    background-color: #444; /* Highlight for today's date */
+    color: white; /* White text */
+}
+
+body.dark-mode .contact-container {
+    background-color: #333; /* Darker background for contact container */
+    color: white; /* White text */
+    border: 1px solid #555; /* Subtle border */
+}
+
+body.dark-mode .contact-container {
+    color: white; /* Ensure all text in the contact container is white */
+}
+
+body.dark-mode .contact-container h1,
+body.dark-mode .contact-container h2,
+body.dark-mode .contact-container p {
+    color: white; /* Ensure headings and paragraphs are white in dark mode */
+}
+
+body.dark-mode .contact-form label {
+    color: white; /* Ensure form labels are white in dark mode */
+}
+
+body.dark-mode .contact-form input, 
+body.dark-mode .contact-form select, 
+body.dark-mode .contact-form textarea {
+    background-color: #444; /* Darker input background */
+    color: white; /* White text */
+    border: 1px solid #555; /* Subtle border */
+}
+
+body.dark-mode .contact-form button {
+    background-color: #555; /* Darker button background */
+    color: white; /* White text */
+}
+
+body.dark-mode .contact-form button:hover {
+    background-color: #666; /* Slightly lighter on hover */
+}
+
+body.dark-mode .calorie-estimator label {
+    color: white; /* White text for labels in dark mode */
+}
+
+
+

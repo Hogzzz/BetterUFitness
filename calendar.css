@@ -1,0 +1,158 @@
+/* Calendar Container */
+.calendar-container {
+    max-width: 800px;
+    margin: 20px auto; /* Center the calendar horizontally */
+    padding: 20px;
+    background-color: white; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the content inside the container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    border: 1px solid black; /* Black border */
+    position: relative; /* Ensure proper positioning for child elements */
+    padding-bottom: 50px; /* Add space at the bottom for navigation buttons */
+}
+
+/* Calendar Grid */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for the days */
+    gap: 5px; /* Space between cells */
+    justify-content: center; /* Center the grid horizontally */
+    margin: 0 auto; /* Center the calendar grid horizontally */
+}
+
+.calendar-header div {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: #059212; /* Dark green for header */
+    color: white; /* White text */
+    border-radius: 4px;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for the days */
+    gap: 5px; /* Space between cells */
+    grid-auto-rows: 1fr; /* Ensure rows adjust dynamically */
+}
+
+.calendar-cell {
+    background-color: white; /* White background */
+    border: 1px solid black; /* Black border */
+    border-radius: 4px;
+    padding: 5px; /* Reduce padding */
+    aspect-ratio: 1; /* Makes the boxes square */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 80px; /* Reduce height for all cells */
+}
+
+.calendar-cell .date {
+    font-weight: bold;
+}
+
+.calendar-cell .workout-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.calendar-cell .workout-list li {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Empty Cells */
+.calendar-cell.empty {
+    background-color: white; /* Match the background of other cells */
+    border: 1px solid black; /* Match the border of other cells */
+    min-height: 80px; /* Ensure consistent height for empty cells */
+}
+
+/* Highlight Current Day */
+.calendar-cell.today {
+    background-color: #06D001; /* Bright green for the current day */
+    color: white; /* White text */
+    border: 2px solid #059212; /* Dark green border */
+}
+
+.calendar-cell:hover {
+    background-color: #E0E0E0; /* Light grey on hover */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .calendar {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+
+    .calendar-cell {
+        height: 80px; /* Adjust height for smaller screens */
+    }
+}
+
+body.dark-mode .calendar-container {
+    color: white; /* Ensure all text in the calendar container is white */
+}
+
+body.dark-mode .calendar-header div {
+    background-color: #444; /* Darker background for header in dark mode */
+    color: white; /* White text for header */
+}
+
+body.dark-mode .calendar-cell .date {
+    color: white; /* Ensure date text is white in dark mode */
+}
+
+body.dark-mode .calendar-cell .workout-list li {
+    color: white; /* Ensure workout list items are white in dark mode */
+}
+
+.calendar-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Add spacing above the navigation */
+    padding: 10px 0; /* Add padding for better spacing */
+}
+
+.calendar-navigation .prev-button,
+.calendar-navigation .next-button {
+    background-color: #059212; /* Dark green */
+    color: white; /* White text */
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-navigation .prev-button:hover,
+.calendar-navigation .next-button:hover {
+    background-color: #04610F; /* Darker green on hover */
+}
+
+/* Ensure the buttons stay inside the main-content box */
+.main-content {
+    position: relative; /* Ensure child elements are positioned relative to this container */
+}
+
+.calendar-navigation .prev-button {
+    position: absolute;
+    bottom: 10px; /* Adjusted to prevent overlap */
+    left: 10px;
+}
+
+.calendar-navigation .next-button {
+    position: absolute;
+    bottom: 10px; /* Adjusted to prevent overlap */
+    right: 10px;
+}

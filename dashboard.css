@@ -1,0 +1,295 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white; /* White background */
+    color: black; /* Black text */
+    min-height: 100vh; /* Ensure the body takes at least full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+html {
+    height: 100%; /* Ensure the html tag also takes full height */
+}
+
+/* Ensure the main content takes up the full height minus the footer */
+.dashboard {
+    min-height: calc(100vh - 50px); /* Adjust based on the footer height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Calories Section - Square and Centered */
+.calories {
+    position: relative; /* Ensures internal positioning */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    background-color: white; /* White background */
+    padding: 20px; /* Add top padding to create space from the header */
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px; /* Limit the width */
+    aspect-ratio: 1; /* Makes it square */
+    margin: 20px auto; /* Centers the box horizontally and adds vertical spacing */
+    height: auto;
+    grid-column: 1; /* Takes full row width */
+    border: 2px solid #9BEC00; /* Light green border */
+}
+/* General Circle Styling */
+
+
+.progress-ring-background {
+    fill: none;
+    stroke: #9BEC00; /* Light green for the background circle */
+    stroke-width: 20;
+}
+
+.progress-ring-bar {
+    fill: none;
+    stroke-width: 20;
+    stroke-linecap: round; /* To make the stroke round at the edges */
+    transition: stroke-dasharray 0.3s ease; /* Smooth animation */
+    
+}
+
+.calories-burned {
+    fill: none;
+    stroke: #FF4D4D; /* Red for burned calories */
+    stroke-width: 20;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.3s ease, stroke-dashoffset 0.3s ease;
+    stroke-dasharray: 880; /* Total circumference of the circle */
+    stroke-dashoffset: 880; /* Initially empty */
+}
+
+.calories-consumed {
+    fill: none;
+    stroke: #059212; /* Dark green for consumed calories */
+    stroke-width: 20;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.3s ease, stroke-dashoffset 0.3s ease;
+    stroke-dasharray: 880; /* Total circumference of the circle */
+    stroke-dashoffset: 880; /* Initially empty */
+}
+
+.calorie-box {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Makes sure it fills the calories section */
+    display: flex;
+    justify-content: center; /* Center the circle */
+    align-items: center;
+    /* Removed box-shadow from the calorie-box */
+}
+
+.progress-ring {
+    display: block;
+    width: 300px;
+    height: 300px;
+    transform: rotate(-90deg); /* Rotate the SVG to start the progress from the top */
+    filter: url(#ring-shadow); /* Apply the shadow filter to the ring */
+}
+
+/* Add shadow effect for the ring */
+.calorie-box svg {
+    filter: url(#ring-shadow); /* Apply the shadow filter */
+}
+
+/* Burned & Consumed Positioning */
+.calorie-text {
+    font-size: 1em; /* Reduced font size */
+    bottom: 15px; /* Adjusted position */
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    position: absolute;
+    color: black; /* Black text for calorie details */
+}
+
+/* Centered Text Styling */
+.centered-text {
+    text-align: center;
+    font-size: 1.2em; /* Reduced font size */
+    font-weight: bold;
+    margin-bottom: 5px; /* Adjusted spacing */
+    color: #059212; /* Dark green for remaining calories text */
+}
+
+.centered-text {
+    font-size: 1.2em;
+    color: var(--text-color); /* Adjusts for dark mode */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Other Sections (Macronutrients, Activity, Health Stats) */
+.other-sections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns in a row */
+    gap: 20px; /* Spacing between the sections */
+    width: 100%; /* Ensures sections scale */
+    justify-items: center; /* Centers the items within each box */
+}
+
+/* Add spacing at the bottom of the page to prevent content from being cut off */
+.dashboard .other-sections {
+    margin-bottom: 20px; /* Add space below the last section */
+}
+
+/* Section Boxes (Macronutrients, Activity, Health Stats) */
+section {
+    background: #ffffff;
+    padding: 20px;
+    border: 2px solid #059212; /* Dark green */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.other-sections section {
+    background: white; /* White background */
+    border: 1px solid black; /* Black border */
+    color: black; /* Black text */
+}
+
+/* Bold, Colored Stats */
+span {
+    font-weight: bold;
+    color: #ff5733; /* Highlight color for stats */
+}
+
+/* Bold, Colored Stats (Specific to Stats Sections) */
+.other-sections span {
+    font-weight: bold;
+    color: #ff5733; /* Highlight color for stats */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    section {
+        width: 100%; /* Full width on mobile */
+    }
+
+    /* Make the Calories section take full width on small screens */
+    .calories {
+        grid-column: 1 / -1; /* Full width for calories section */
+        aspect-ratio: 1; /* Keep it square on mobile */
+    }
+
+    /* Stacks the other 3 boxes vertically on small screens */
+    .other-sections {
+        grid-template-columns: 1fr; /* Stacks sections in a single column on small screens */
+    }
+}
+
+.autocomplete-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: none; /* Remove borders */
+    box-shadow: none; /* Remove box shadows */
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute; /* Ensure it appears relative to the input field */
+    background-color: white;
+    width: 100%; /* Match the width of the input field */
+    z-index: 1000;
+}
+
+.autocomplete-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.autocomplete-list li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Ensure the parent container of the input field has relative positioning */
+.food-log {
+    border: none; /* Remove borders */
+    box-shadow: none; /* Remove box shadows */
+    position: relative;
+    margin: 20px 0; /* Add spacing above and below the section */
+}
+
+/* Remove borders and box shadows from the input fields */
+#food-name,
+#food-calories {
+    border: 1px solid #ccc; /* Optional: Add a subtle border */
+    box-shadow: none; /* Remove any box shadow */
+    background-color: #fff; /* Ensure a consistent background color */
+}
+
+/* Ensure the form and its elements are aligned properly */
+#food-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add spacing between the input fields */
+}
+
+.button-primary {
+    background-color: #06D001; /* Bright green */
+}
+
+.button-primary:hover {
+    background-color: #059212; /* Dark green */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
+}
+
+body.dark-mode .calories {
+    background-color: #1e1e1e; /* Darker background for calories section */
+    border-color: #06D001; /* Bright green border */
+}
+
+body.dark-mode .centered-text {
+    color: #06D001; /* Bright green for text in dark mode */
+}
+
+body.dark-mode .calorie-text {
+    color: #e0e0e0; /* Light text for calorie details */
+}
+
+body.dark-mode .progress-ring-background {
+    stroke: #333333; /* Dark gray for the background circle */
+}
+
+body.dark-mode .calories-burned {
+    stroke: #FF4D4D; /* Red for burned calories */
+}
+
+body.dark-mode .calories-consumed {
+    stroke: #059212; /* Dark green for consumed calories */
+}
+
+body.dark-mode .other-sections section {
+    background-color: #1e1e1e; /* Darker background for other sections */
+    border-color: #06D001; /* Bright green border */
+    color: #e0e0e0; /* Light text */
+}
+
+body.dark-mode .other-sections span {
+    color: #ffcc00; /* Yellow highlight for stats in dark mode */
+}
+
+body.dark-mode label[for="activity-level"],
+body.dark-mode label[for="weight-goal"] {
+    color: #ffffff; /* White text for labels in dark mode */
+}

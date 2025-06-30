@@ -1,0 +1,143 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    max-width: 90%;
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    background-color: #059212; /* Dark green */
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nutrition-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.meal-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.meal-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #059212; /* Dark green */
+}
+
+.meal-list {
+    list-style: none;
+    padding: 0;
+}
+
+.meal-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.meal-list li:last-child {
+    border-bottom: none;
+}
+
+.add-item-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for forms */
+}
+
+.add-item-button,
+.submit-item-button,
+.delete-item-button,
+.save-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-item-button {
+    background-color: #06D001; /* Bright green */
+    color: #fff;
+}
+
+.add-item-button:hover {
+    background-color: #059212; /* Dark green */
+}
+
+.submit-item-button {
+    background-color: #059212; /* Dark green */
+    color: white;
+}
+
+.submit-item-button:hover {
+    background-color: #04610F; /* Darker green */
+}
+
+.delete-item-button {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.delete-item-button:hover {
+    background-color: #c82333;
+}
+
+.save-button {
+    background-color: #06D001; /* Bright green */
+    color: #fff;
+}
+
+.save-button:hover {
+    background-color: #059212; /* Dark green */
+}
